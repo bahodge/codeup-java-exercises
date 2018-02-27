@@ -4,27 +4,27 @@ public class ConsoleExercises {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 
-//
-//        System.out.print("Enter an integer: ");
-//        int userInt;
-//        userInt = scan.nextInt();
-//        System.out.println("You entered ---> \"" + userInt + "\" <---");
+
+        System.out.print("Enter an integer: ");
+        int userInt;
+        userInt = scan.nextInt();
+        System.out.println("You entered ---> \"" + userInt + "\" <---");
 
 
 
-//        System.out.print("Enter Word: ");
-//        String wordOne = scan.next();
-//        System.out.print("Enter Word: ");
-//        String wordTwo = scan.next();
-//        System.out.print("Enter Word: ");
-//        String wordThree = scan.next();
-//
-//        System.out.println("You entered ---> \"" + wordOne + " " + wordTwo + " " + wordThree + "\" <---");
+        System.out.print("Enter Word: ");
+        String wordOne = scan.next();
+        System.out.print("Enter Word: ");
+        String wordTwo = scan.next();
+        System.out.print("Enter Word: ");
+        String wordThree = scan.next();
+
+        System.out.println("You entered ---> \"" + wordOne + " " + wordTwo + " " + wordThree + "\" <---");
 
 
-//        System.out.print("Enter a Sentence: ");
-//        String userSentence = scan.nextLine();
-//        System.out.println("You entered ---> \"" + userSentence + "\" <---");
+        System.out.print("Enter a Sentence: ");
+        String userSentence = scan.nextLine();
+        System.out.println("You entered ---> \"" + userSentence + "\" <---");
 
         double length;
         double width;
