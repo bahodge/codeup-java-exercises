@@ -14,13 +14,13 @@ public class Bob {
             if (userPrompt.endsWith("?")){
                 bobResponse += " Sure";
                 System.out.println(bobResponse);
-            } else if (userPrompt.endsWith("!")){
-                bobResponse += " Woah, chill out!";
-                System.out.println(bobResponse);
-            } else if (userPrompt.equals("")){
+            } else if (userPrompt.trim().equals("")){
                 bobResponse += " Fine. Be that way!";
                 System.out.println(bobResponse);
-            } else if (userPrompt.equalsIgnoreCase("bye")) {
+            } else if (userPrompt.endsWith("!") || userPrompt.toUpperCase().equals(userPrompt)){
+                bobResponse += " Woah, chill out!";
+                System.out.println(bobResponse);
+            }  else if (userPrompt.equalsIgnoreCase("bye")) {
                 bobResponse += " Later Gator";
                 System.out.println(bobResponse);
                 askQuestion = false;
@@ -30,7 +30,7 @@ public class Bob {
                 System.out.println(bobResponse);
             }
         } while (askQuestion);
-
-
     }
 }
+
+
