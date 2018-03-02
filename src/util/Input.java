@@ -1,10 +1,15 @@
 package util;
 import java.util.Random;
 import java.util.Scanner;
+import java.util.Arrays;
 
 public class Input {
     private Scanner sc = new Scanner(System.in);
     private Random rand = new Random();
+
+
+
+
 
 
     public String getString(){
