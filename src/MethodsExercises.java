@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.Random;
 
 public class MethodsExercises {
     public static void main(String[] args) {
@@ -13,13 +14,9 @@ public class MethodsExercises {
         System.out.println("modulusNums result: " + modulusNums(num1, num2));
         System.out.println("multiplyWithAdd result: " +multiplyWithAdd(num1,num2));
 //        System.out.println(getRange(1, 10));
-
         System.out.println("getFactorial result: " + getFactorial(10));
-
-
-
-
-
+//        rollDice();
+        guessingGame();
 
     }
 
@@ -96,6 +93,38 @@ public class MethodsExercises {
 
         System.out.println(output += " = " + a);
         return a;
+    }
+
+    public static void rollDice (){
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Number of sides per dice: ");
+        int numOfSides = scanner.nextInt();
+        System.out.print("Number of dice");
+        int numOfDice = scanner.nextInt();
+        String userResponse;
+        Random rand = new Random();
+
+        int total = 0;
+        for (int i = 0; i < numOfDice; i++){
+            int  diceValue = rand.nextInt(numOfSides) + 1;
+            total += diceValue;
+            System.out.println("Di #" + (i + 1) + ": " + diceValue);
+        }
+        System.out.println("Average value of dice: " + total / numOfDice);
+        System.out.println("Total value of dice: " + total);
+
+        scanner.nextLine();
+
+        System.out.print("Again? [y/n]: ");
+        userResponse = scanner.nextLine();
+
+        if (userResponse.equalsIgnoreCase("y")){
+            rollDice();
+        }
+    }
+
+    public static void guessingGame(){
     }
 
 
