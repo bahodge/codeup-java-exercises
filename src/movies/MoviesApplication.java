@@ -10,18 +10,12 @@ public class MoviesApplication {
 
     public static void main(String[] args) {
         Input input = new Input(); //Only need 1
-
         do {
             userContinue = true;
             promptUser();
-
             parseUserInput(input.getInt("Please Select an option: "), movieFinder);
-
         } while (userContinue);
     }
-
-
-
 //    ################### Methods #################
 
     private static void promptUser(){
@@ -35,7 +29,6 @@ public class MoviesApplication {
         System.out.println("6 - view movies in the musical category");
         System.out.println("7 - add your own movie");
         System.out.println("8 - Search for a movie by title");
-
         System.out.println("\n");
     }
 
@@ -59,7 +52,6 @@ public class MoviesApplication {
         String newTitle = input.getString("New Movie Title: ");
         String newCategory;
         boolean matchesExisting = false;
-
         do {
             newCategory = input.getString("New Movie Category: ");
             for(String category : categories){
@@ -78,8 +70,6 @@ public class MoviesApplication {
         movieFinder = movieArray;
     }
 
-
-
     private static void searchMovie(){
         Input input = new Input();
         String searchString = input.getString("Enter a title: ");
@@ -97,31 +87,24 @@ public class MoviesApplication {
 
         if (count == 1){
             do{
-                editMovieQuestion = false;
-                if (input.getString("Would you like to edit this?[y/n]: ").equalsIgnoreCase("y")){
-                    editMovieQuestion = true;
+                editMovieQuestion = input.getString("Would you like to edit this?[y/n]: ").equalsIgnoreCase("y");
+                if (editMovieQuestion){
                     editMovieName(editableMovie);
                 }
-            } while (!editMovieQuestion);
-
+            } while (editMovieQuestion);
         }
         if (count == 0){
             System.out.println("No results");
         }
     }
-
-//    //WIP
-    private static Movie editMovieName(Movie movieObj) {
+//    WIP
+    private static void editMovieName(Movie movieObj) {
         Input input = new Input();
         movieObj.setName(input.getString("Enter new title: "));
         if (input.getString("Change category?[y/n]:  ").equalsIgnoreCase("y")){
             movieObj.setCategory(input.getString("Enter new category: "));
         }
-        return movieObj;
     }
-
-
-
 
     private static void parseUserInput(int userInput, Movie[] refArray) {
         switch (userInput){
@@ -177,8 +160,6 @@ public class MoviesApplication {
                     }
                 }
                 break;
-
-
             case 7:
                 addMovie(refArray);
                 break;
