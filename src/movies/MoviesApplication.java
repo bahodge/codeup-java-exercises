@@ -7,9 +7,9 @@ public class MoviesApplication {
     private static Movie[] movieFinder = MoviesArray.findAll();
     private static boolean userContinue;
 
+
     public static void main(String[] args) {
         Input input = new Input(); //Only need 1
-
 
         do {
             userContinue = true;
@@ -62,8 +62,6 @@ public class MoviesApplication {
 
         do {
             newCategory = input.getString("New Movie Category: ");
-
-
             for(String category : categories){
                 if (category.equalsIgnoreCase(newCategory)){
                     matchesExisting = true;
@@ -80,21 +78,50 @@ public class MoviesApplication {
         movieFinder = movieArray;
     }
 
+
+
     private static void searchMovie(){
         Input input = new Input();
         String searchString = input.getString("Enter a title: ");
         int count = 0;
+        Movie editableMovie = null;
+        boolean editMovieQuestion;
         printTableHead();
         for (Movie ele : movieFinder){
             if (ele.getName().toLowerCase().contains(searchString.toLowerCase())){
                 count++;
                 constructMovie(ele);
+                editableMovie = ele;
             }
+        }
+
+        if (count == 1){
+            do{
+                editMovieQuestion = false;
+                if (input.getString("Would you like to edit this?[y/n]: ").equalsIgnoreCase("y")){
+                    editMovieQuestion = true;
+                    editMovieName(editableMovie);
+                }
+            } while (!editMovieQuestion);
+
         }
         if (count == 0){
             System.out.println("No results");
         }
     }
+
+//    //WIP
+    private static Movie editMovieName(Movie movieObj) {
+        Input input = new Input();
+        movieObj.setName(input.getString("Enter new title: "));
+        if (input.getString("Change category?[y/n]:  ").equalsIgnoreCase("y")){
+            movieObj.setCategory(input.getString("Enter new category: "));
+        }
+        return movieObj;
+    }
+
+
+
 
     private static void parseUserInput(int userInput, Movie[] refArray) {
         switch (userInput){
