@@ -8,8 +8,8 @@ public class Student {
     //This student has its own array list of Grades
     protected ArrayList<Integer> grades = new ArrayList<>();
     protected ArrayList<String> missedDaysArray = new ArrayList<>();
-    //Student attendence
-    protected HashMap<String, String> attendence = new HashMap<>();
+    //Student attendance
+    protected HashMap<String, String> attendance = new HashMap<>();
 
 
 
@@ -36,7 +36,7 @@ public class Student {
 
     public double getAttendanceAverage(){
         double daysAttended = 0;
-        for (String att : attendence.values()){
+        for (String att : attendance.values()){
             if (att.equalsIgnoreCase("p")){
                 daysAttended++;
             }
@@ -46,8 +46,8 @@ public class Student {
 
     public String getMissedDates(){
         String datesMissed = "";
-        for (String key : attendence.keySet()){
-            if (attendence.get(key).equalsIgnoreCase("a") ){
+        for (String key : attendance.keySet()){
+            if (attendance.get(key).equalsIgnoreCase("a") ){
                 datesMissed += " |  " + key;
             }
         }
@@ -56,7 +56,7 @@ public class Student {
 
     public int getMissedDays() {
         int daysMissed = 0;
-        for (String att : attendence.values()){
+        for (String att : attendance.values()){
             if (att.equalsIgnoreCase("a")){
                 daysMissed++;
             }

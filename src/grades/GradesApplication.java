@@ -20,7 +20,7 @@ public class GradesApplication {
         s.addGrade((int)Math.floor(Math.random() * 100));
     }
 
-    public static String generateAttendence() {
+    public static String generateattendance() {
         int a = (int) (Math.floor(Math.random() * 2) + 1);
         if (a > 1){
             return "P";
@@ -30,11 +30,11 @@ public class GradesApplication {
     }
 
     public static void addAttendance(Student s){
-        s.attendence.put("01-01-2017", generateAttendence());
-        s.attendence.put("01-02-2017", generateAttendence());
-        s.attendence.put("01-03-2017", generateAttendence());
-        s.attendence.put("01-04-2017", generateAttendence());
-        s.attendence.put("01-05-2017", generateAttendence());
+        s.attendance.put("01-01-2017", generateattendance());
+        s.attendance.put("01-02-2017", generateattendance());
+        s.attendance.put("01-03-2017", generateattendance());
+        s.attendance.put("01-04-2017", generateattendance());
+        s.attendance.put("01-05-2017", generateattendance());
     }
 
     public static void populateStudentHashMaps(HashMap<String, Student> map){
