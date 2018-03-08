@@ -12,7 +12,6 @@ public class Student {
     protected HashMap<String, String> attendance = new HashMap<>();
 
 
-
     public Student(String name) {
         this.name = name;
     }
@@ -63,7 +62,4 @@ public class Student {
         }
         return daysMissed;
     }
-
-
-
 }

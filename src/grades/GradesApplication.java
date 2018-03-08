@@ -4,10 +4,6 @@ import java.util.HashMap;
 
 public class GradesApplication {
     public static void main(String[] args) {
-//        System.out.println((char)27 + "[31m" + "ERROR MESSAGE IN RED");
-//        System.out.println((char)27 + "[34m" + "BLUE");
-//        System.out.println((char)27 + "[35mMAGENTA");
-//        System.out.println((char)27 + "[33mYELLOW");
         HashMap<String, Student> students = new HashMap<>();
         populateStudentHashMaps(students);
         promptUser(students);
