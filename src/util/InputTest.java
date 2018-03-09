@@ -1,14 +1,15 @@
 package util;
 
+import java.sql.SQLOutput;
+
 public class InputTest {
     public static void main(String[] args) {
         Input input = new Input();
-        input.getString();
-        input.yesNo();
-        input.getInt(1, 10);
-        input.getInt();
-        input.getDouble(1.5, 2.322);
-        input.getDouble();
+//        input.getInt();
+//        input.getInt(1, 5);
+//        input.getDouble();
+        input.getHex();
+
     }
 
 }
