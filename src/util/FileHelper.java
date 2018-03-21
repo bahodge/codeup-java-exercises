@@ -11,52 +11,38 @@ import java.util.List;
 
 import static java.nio.file.StandardCopyOption.ATOMIC_MOVE;
 
-public class FIleHelper {
+public class FileHelper {
 
-//    public static void main(String[] args) {
-//
+    public static void main(String[] args) {
+
+        String test = "test.txt";
+
 //        //Creating a test file with some content!
-//        ArrayList<String> initialContent = new ArrayList<>();
-//        initialContent.add("This is some Initial Content");
-//        initialContent.add("Fear is the best");
-//        initialContent.add("Our lives for the God Emperor");
-//        initialContent.add("Brutality is a virtue");
-//        initialContent.add("The Tyranid Threat CANNOT be stopped");
-//
-//        System.out.println();
-//        System.out.println("Spitting coolText.txt w/ initial content");
-//        spit("coolText.txt", initialContent);
-//
-//        System.out.println();
-//        System.out.println("Slurping coolText.txt");
-//        slurp("coolText.txt");
-//        System.out.println(slurp("coolText.txt"));
-//
-//        ArrayList<String> appendingContent = new ArrayList<>();
-//        appendingContent.add("The black death arrives");
-//        appendingContent.add("Who am I to challenge the albatross");
-//        appendingContent.add("The harbinger mans the gallows");
-//        appendingContent.add("There is but pain in deceit");
-//
-//        System.out.println("Appending coolText.txt");
-//        spit("coolText.txt", appendingContent, true);
-//
-//        System.out.println();
-//        System.out.println(slurp("coolText.txt"));
-//
-//        System.out.println();
-//        System.out.println("Making coolText.txt Exciting!");
-//        makeExciting("coolText.txt");
-//
-////        System.out.println();
-////        System.out.println("Making a copy of coolText.txt");
-////        copy("coolText.txt", "a.txt");
-////
-////        System.out.println("Making a copy of coolText.txt");
-////        move("coolText.txt", "b.txt");
-//
-//
-//    }
+        ArrayList<String> initialContent = new ArrayList<>();
+        ArrayList<String> overwriteContent = new ArrayList<>();
+        ArrayList<String> appendContent = new ArrayList<>();
+        initialContent.add("This is some Initial Content");
+        initialContent.add("Fear is the best");
+        overwriteContent.add("Our lives for the God Emperor");
+        appendContent.add("Brutality is a virtue");
+        appendContent.add("The Tyranid Threat CANNOT be stopped");
+
+        System.out.println();
+        spit(test, initialContent);
+        System.out.println(slurp(test));
+
+        System.out.println();
+        spit(test, overwriteContent);
+        System.out.println(slurp(test));
+
+        System.out.println();
+        spit(test, appendContent, true);
+        System.out.println(slurp(test));
+
+        makeExciting(test);
+
+
+    }
 
     public static List<String> slurp (String filePath) {
         List<String> list = null;
@@ -119,9 +105,12 @@ public class FIleHelper {
 
     public static void makeExciting(String filename){
         //Exception is handled in slurp
+        List<String> excitedLines = new ArrayList<>();
         for (String line : slurp(filename)){
-            System.out.println(line.toUpperCase() + "!");
+            String excitedLine = line.toUpperCase() + "!";
+            excitedLines.add(excitedLine);
         }
+        spit(filename, excitedLines);
     }
 
 
